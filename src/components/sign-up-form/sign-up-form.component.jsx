@@ -44,6 +44,7 @@ export default function SignUp() {
         formData.email,
         formData.password
       );
+
       authUser.user.displayName = formData.displayName;
       // Create user document
       await creatUserDocumentFromAuth(authUser.user);

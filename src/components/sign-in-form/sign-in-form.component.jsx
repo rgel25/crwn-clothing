@@ -1,7 +1,6 @@
 import React from "react";
 import {
   signInWithGooglePopup,
-  creatUserDocumentFromAuth,
   signInAuthWithEmailAndPassword,
 } from "../../utils/firebase/firebase.utils";
 import Button from "../button/button.component";
@@ -24,18 +23,13 @@ export default function SignIn() {
     }));
   };
   const signInWithGoogle = async () => {
-    const { user } = await signInWithGooglePopup();
-    await creatUserDocumentFromAuth(user);
+    await signInWithGooglePopup();
   };
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await signInAuthWithEmailAndPassword(
-        formData.email,
-        formData.password
-      );
-      console.log(response);
+      await signInAuthWithEmailAndPassword(formData.email, formData.password);
     } catch (error) {
       if (
         error.code === "auth/wrong-password" ||
