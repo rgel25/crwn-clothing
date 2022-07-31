@@ -8,7 +8,7 @@ export const ProductContext = createContext({
 
 // Provider - provides the user context
 export const ProductProvider = ({ children }) => {
-  const [products, setProducts] = useState(SHOP_DATA);
+  const [products] = useState(SHOP_DATA);
   const value = { products };
 
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet, Link } from "react-router-dom";
-import { Fragment, useContext, useState } from "react";
+import { Fragment, useContext } from "react";
 import { UserContext } from "../../context/user.context";
 import { CartContext } from "../../context/cart.context";
 import { ReactComponent as CrwnLogo } from "../../assets/crown.svg";
