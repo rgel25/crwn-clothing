@@ -1,18 +1,26 @@
 import React from "react";
-import "./category-item.styles.scss";
+import {
+  BackgroundImage,
+  Body,
+  DirectoryItemContainer,
+} from "./category-item.styles";
+
+import { useNavigate } from "react-router-dom";
 
 export default function CategoryItem({ category }) {
-  const { title, imageUrl } = category;
+  const { title, imageUrl, route } = category;
+  const redirect = useNavigate();
+
+  const handleRedirect = () => redirect(route);
   return (
-    <div className="category-container">
-      <div
-        className="category-background-image"
+    <DirectoryItemContainer onClick={handleRedirect}>
+      <BackgroundImage
         style={{ backgroundImage: `url(${imageUrl})` }}
-      ></div>
-      <div className="category-body-container">
+      ></BackgroundImage>
+      <Body>
         <h2>{title}</h2>
         <p>Shop Now</p>
-      </div>
-    </div>
+      </Body>
+    </DirectoryItemContainer>
   );
 }

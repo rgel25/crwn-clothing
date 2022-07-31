@@ -5,7 +5,8 @@ body {
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding: 20px 40px;
+  padding: 0px 40px;
+  padding-bottom: 20px;
 }
 
 code {
